@@ -3,21 +3,33 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
+
+  /* New */
+  padding: 20px;
 }
 .container {
   display: flex;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1),
-              0 6px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
+
+  /* New */
+  max-width: 800px; /* Added max-width */
+  width: 100%; /* Ensure it takes full width of the parent */
 }
-img{
+img {
   border-radius: 8px 0 0 8px;
+  /* New */
+  max-width: 100%; /* Ensure image resizes */
+  height: auto; /* Maintain aspect ratio */
 }
 .right-outer-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  /* New */
+  flex: 1;
 }
 
 .right-inner-container {
@@ -25,8 +37,9 @@ img{
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  padding: 0 70px;
-  /* height: 60%; */
+  /* new */
+  padding: 20px;
+  /* width: 100%; */
 }
 .form {
   width: 100%;
@@ -73,26 +86,81 @@ img{
 .login-btn {
   background-color: #179010;
   color: white;
-  margin: 20px 20px;
+  margin: 20px 0;
 }
 .login-btn:hover {
   background-color: #0d6e07;
 }
 
-.forgot-password{
+.forgot-password {
   color: #007bff;
   margin-top: 10px;
   text-align: right;
 }
 
-.heading{
+.heading {
   font-size: 24px;
   font-weight: 700;
   margin-bottom: 20px;
 }
 
-.desc{
+.desc {
   font-size: 14px;
   color: #888;
   margin-bottom: 20px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* Stack items vertically */
+  }
+
+  img {
+    border-radius: 8px 8px 0 0;
+    display: none; /* Adjust border radius for stacked layout */
+  }
+
+  .right-inner-container {
+    padding: 20px; /* Adjust padding for smaller screens */
+  }
+
+  .heading {
+    font-size: 20px; /* Adjust font size */
+  }
+
+  .desc {
+    font-size: 12px; /* Adjust font size */
+  }
+
+  .btn {
+    font-size: 16px; /* Adjust button font size */
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    flex-direction: column;
+  }
+
+  img {
+    width: 100%; /* Ensure image takes full width */
+    border-radius: 8px 8px 0 0;
+  }
+
+  .right-inner-container {
+    padding: 15px; /* Further adjust padding for smaller screens */
+  }
+
+  .heading {
+    font-size: 18px; /* Further adjust font size */
+  }
+
+  .desc {
+    font-size: 12px; /* Further adjust font size */
+  }
+
+  .btn {
+    font-size: 14px; /* Further adjust button font size */
+  }
 }
